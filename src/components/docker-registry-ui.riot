@@ -17,11 +17,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <docker-registry-ui>
   <header>
     <material-navbar>
-      <span class="logo">
-        <span><a href="/registry-ui/">Docker Registry</a></span>
-       &nbsp;&nbsp;&nbsp;<a href='/c/main/'>Kubernetes</a>&nbsp;&nbsp;&nbsp;<a href='/grafana/'>Grafana</a>&nbsp;&nbsp;
-        <version-notification version="{ latest }" on-notify="{ notifySnackbar }"></version-notification>
-      </span>
+      <div class="logo">
+      <a href="/registry-ui/">Docker Registry</a>&nbsp;&nbsp;&nbsp;
+      <u onclick="document.location='/c/main/';">Kubernetes</u>&nbsp;&nbsp;&nbsp;
+      <u onclick="document.location='/grafana/';">Grafana</u>
+      </div>
       <div class="menu">
         <search-bar on-search="{ onSearch }"></search-bar>
         <dialogs-menu
@@ -296,6 +296,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
       display: flex;
       align-items: center;
       flex-direction: row;
+    }
+    material-navbar .nav-wrapper .logo u {
+      cursor: pointer;
     }
 
     material-footer {
